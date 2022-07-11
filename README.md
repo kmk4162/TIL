@@ -6,8 +6,10 @@
 
 [Git/Github(220705~220707)](./Git%26Github/README.md)
 
-[특강](./%ED%8A%B9%EA%B0%95/README.md)
+[Python](./Python/README.md)
 
-Python
+[코드업 100제](./codeup/python%20100%EC%A0%9C/)
+
+[특강](./%ED%8A%B9%EA%B0%95/README.md)
 
 Updating...
