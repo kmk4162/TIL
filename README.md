@@ -6,7 +6,7 @@
 
 [Git/Github(220705~220707)](./Git%26Github/README.md)
 
-[Python](./Python/README.md)
+[Python(220711~)](./Python/README.md)
 
 [코드업 100제](./codeup/python%20100%EC%A0%9C/)
 
