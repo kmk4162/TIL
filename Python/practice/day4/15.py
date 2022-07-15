@@ -15,3 +15,6 @@ for i in word:
 if cnt == len(word):
     print(-1)
 
+
+
+
