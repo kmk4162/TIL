@@ -2,6 +2,7 @@
 # 1. def
 # 2. 함수 이름 : add
 # 3. input : a, b
+
 def add(a, b):
     return a + b
     # return : 값을 반환
