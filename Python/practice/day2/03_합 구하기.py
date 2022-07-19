@@ -5,7 +5,7 @@ n = int(input())
 cnt = 1
 total = 0
 
-# 1. while문
+#* 1. while문
 
 while cnt <=  n:
     total += cnt
@@ -13,7 +13,7 @@ while cnt <=  n:
     cnt += 1
 print(f'총합은 {total} 입니다')
 
-#2. for문
+#2*. for문
 
 for i in range(n):
     total += cnt

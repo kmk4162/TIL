@@ -4,20 +4,20 @@
 word = input()
 cnt = 0
 
-# 1. while문
+#* 1. while문
 
 while(word != ""):
     cnt+=1
     word = word[1:]
 print(cnt)
 
-# 2-1. for문: 문자열 그대로 사용
+#* 2-1. for문: 문자열 그대로 사용
 
 for i in word:
     cnt += 1
 print(f'길이는 {cnt} 입니다')
 
-# 2-2. for문: index 사용
+#* 2-2. for문: index 사용
 
 for i in range(len(word)):
     cnt += 1
