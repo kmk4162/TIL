@@ -7,6 +7,6 @@ result = 0
 while num > 0:
     a = num // 10
     b = num % 10
-    # print(b, end = '')
+    print(b, end = '')
     num = a
 
