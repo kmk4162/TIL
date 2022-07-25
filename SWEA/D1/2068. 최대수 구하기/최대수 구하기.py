@@ -27,3 +27,4 @@ for i in range(1, T + 1):
     num_list = list(map(int, input().split()))
     num_list.sort()
     print(f'#{i} {num_list[-1]}')
+    # sort로 정렬한 후 제일 뒤에있는 숫자를 출력
