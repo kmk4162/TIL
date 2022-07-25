@@ -1,5 +1,4 @@
-N = int(input(""))
+num= int(input())
 
-for i in range(9):
-    x= N * (i+1)
-    print(N,'*',i+1,'=', x)
+for i in range(1, 10):
+    print(f'{num} * {i} = {num * i}')
