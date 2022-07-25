@@ -16,6 +16,8 @@
 
 👉 [python_8(220720)](./Python_220720.md) : 클래스, 객체 지향 핵심 개념
 
-👉 [python_9(220721)](./Python_220720.md) : List/Dictionary Comprehension, 패키지, 가상환경
+👉 [python_9(220721)](./Python_220721.md) : List/Dictionary Comprehension, 패키지, 가상환경
+
+👉 [python_10(220722)](./Python_220722.md) : API, JSON, URL get 이용해서 가져오기
 
 👉 [python_practice](./practice/) : 일별로 정리해둠
