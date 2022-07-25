@@ -19,7 +19,7 @@
 
 N = input()
 result = 0
-for i in list(N):
+for i in list(N): # N이 문자열이니까 for i in N도 가능
     result += int(i)
 print(result)
 
