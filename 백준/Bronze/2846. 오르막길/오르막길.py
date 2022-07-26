@@ -13,7 +13,6 @@ for i in height_list:
     else:
         height_diff = 0
         start_pos = i
-        continue
 if bool(height_diffs) is True:   
     print(sorted(height_diffs)[-1])
 else:
