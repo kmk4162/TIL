@@ -77,3 +77,5 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
+
+![image](https://user-images.githubusercontent.com/108652903/181168200-a693379e-61cb-49d7-8726-03ea66dcd4d6.png)
