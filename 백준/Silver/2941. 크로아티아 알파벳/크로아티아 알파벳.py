@@ -5,6 +5,4 @@ cnt = 0
 for i in cro_words:
     if i in word:
         cnt += word.count(i)
-    continue
 print(len(word) - cnt)
-
