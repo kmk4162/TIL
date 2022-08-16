@@ -349,6 +349,38 @@ SELECT * FROM examples;
 
 
 
+#### 🟨 DELETE
+
+- 특정 데이터값을 삭제하고 싶으면?
+
+  ```sqlite
+  DELETE FROM classmates WHERE rowid=5;
+  ```
+
+  ![image-20220817000653109](Database_220816.assets/image-20220817000653109.png)
+
+  > rowid가 5인 데이터가 삭제됨
+
+<br>
+
+
+
+#### 🟨 Update
+
+- 특정 데이터값을 바꾸고 싶으면?
+
+  ```sqlite
+  UPDATE classmates SET name='홍길동', address='제주도' WHERE rowid=5;
+  ```
+
+  ![image-20220817001405073](Database_220816.assets/image-20220817001405073.png)
+
+  > rowid가 5인 값의 데이터를 원하는대로 수정 가능!
+
+<br>
+
+
+
 
 # 🌆 오후
 
