@@ -10,15 +10,13 @@
 
 ✅ [Python(220711~220722)](./Python/README.md)
 
-✅ [Algorithm(220725~220812)](./Algorithm/)
+✅ [Algorithm(220725~220812)](./Algorithm/README.md)
 
-✅ [Database(220816~)](./Database/)
+✅ [Database(220816~)](./Database/README.md)
 
 ✅ [특강](./%ED%8A%B9%EA%B0%95/README.md)
 
 <br>
-
-
 
 ### 📁 Ready for Test
 
@@ -29,5 +27,11 @@
 ✅ [SWEA](./SWEA/)
 
 ✅ [프로그래머스](./%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/)
+
+<br>
+
+### 📁 Additional Study
+
+✅ [알고리즘](./)
 
 Updating...
