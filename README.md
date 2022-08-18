@@ -32,6 +32,6 @@
 
 ### 📁 Additional Study
 
-✅ [알고리즘](./)
+✅ [알고리즘](./Additional/algorithm.md)
 
 Updating...
