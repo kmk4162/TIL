@@ -6,5 +6,7 @@
 
 👉 [Database_3(220818)](./Database_220818.md) : 기본 함수와 연산, GROUP BY, HAVING, SELECT 실행 순서, ALTER TABLE
 
+👉 [Database_4(220819)](./Database_220819.md) : CASE 문, 서브쿼리 
+
 
 
