@@ -14,6 +14,8 @@
 
 <br>
 
+
+
 ### ✅ ORM
 
 #### 🟨 ORM이란
@@ -35,6 +37,8 @@
   👉 둘은 같은 코드!
 
 <br>
+
+
 
 #### 🟨 모델 설계 및 반영
 
@@ -63,6 +67,8 @@ python manage.py migrate
 
 <br>
 
+
+
 #### 🟨 Migration
 
 - Model에 생긴 변화를 DB에 반영하기 위한 방법
@@ -85,29 +91,7 @@ COMMIT
 
 <br>
 
-### ✅ ORM 기본 조작
 
-#### 🟨 Create
-
-- get은 PK로 하나 뽑을 때
-- filter는 여러개를 거를 때
-
-#### 🟨 Read
-
-- get은 PK로 하나 뽑을 때
-- filter는 여러개를 거를 때
-
-#### 🟨 Update
-
-- get은 PK로 하나 뽑을 때
-- filter는 여러개를 거를 때
-
-#### 🟨 Delete
-
-- get은 PK로 하나 뽑을 때
-- filter는 여러개를 거를 때
-
-<br>
 
 # 🌆 오후
 
@@ -117,12 +101,10 @@ COMMIT
 
 #### ✔️ 실습 환경 설정
 
-👉 [참고자료](./)
+👉 [참고자료](./Practice/220824/README.md)
 
 <br>
 
-
-
 #### ✔️ 실습07
 
-👉 [실습파일](./)
+👉 [실습파일](./Practice/220824/%EC%8B%A4%EC%8A%B507.md)
