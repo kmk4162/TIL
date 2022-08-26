@@ -489,7 +489,8 @@ print(result)
 - 모든 모험가를 특정 그룹에 넣을 필요는 없음
 
 ```python
-# my solution
+✅ my solution
+
 from collections import deque
 
 N = int(input())
@@ -521,7 +522,8 @@ print(cnt)
 > - 접근 방향은 비슷했지만, 내림차순이 아니라 오름차순으로 풀어야함!
 
 ```python
-# good solution
+✅ good solution
+
 N = int(input())
 nums = list(map(int, input().split()))
 nums.sort()
@@ -596,7 +598,8 @@ for i in range(4):
 - 정사각형 공간 벗어나는 움직임은 무시됨
 
 ```python
-# my solution
+✅ my solution
+
 dx = [1, 0, -1 ,0]
 dy = [0, 1, 0 ,-1]
 d_cmds = ['D', 'R', 'U', 'L']
@@ -637,7 +640,8 @@ print(x, y)
 - 반면에 00시 02분 55초 같이 3이 없으면 세면 안됨
 
 ```python
-# my solution
+✅ my solution
+
 hour = 0
 minute = 0
 second = 0
@@ -682,7 +686,7 @@ print(cnt)
   <img src="algorithm.assets/image-20220824020754042.png" alt="image-20220824020754042" style="zoom:50%;" />
 
 ```python
-# my solution
+✅ my solution
 
 # 초기 위치
 rows = [1, 2, 3, 4, 5, 6, 7, 8]
@@ -712,7 +716,7 @@ print(cnt)
 - 입력이 `K1KA5CB7` 이면, 출력은 `ABCKK13` 
 
 ```python
-# my solution
+✅ my solution
 
 word = input()
 # K1KA5CB7
@@ -1018,7 +1022,7 @@ dfs(graph, 1, visited)
 >   ```python
 >   # 예를 들어 간선 입력이
 >   # 1 2 / 1 3 / 3 4 / 3 5 이런식으로 주어지면
->     
+>         
 >   # 정점 개수만큼
 >   graph = [[] for _ in range(6)]
 >   # 간선 개수만큼
@@ -1042,14 +1046,325 @@ dfs(graph, 1, visited)
 - 너비 우선 탐색
 - 가까운 노드부터 우선적으로 탐색하는 알고리즘
 - `큐 자료구조` 사용
+- 특정 구조의 `최단 거리 알고리즘`에 유용
 - 동작 과정
   1. 탐색 시작 노드를 큐에 삽입하고 방문 처리
   2. 큐에서 노드를 꺼낸 뒤, 해당 노드의 인접 노드 중에서 방문하지 않은 노드를 모두 큐에 삽입하고 방문 처리
   3. 더이상 2번의 과정을 수행할 수 없을 때까지 반복
 
-  <br>
 
+<br>
 
+#### ✔️ BFS 동작 예시
+
+<img src="algorithm.assets/image-20220826004404391.png" alt="image-20220826004404391" style="zoom:50%;" />
+
+- 시작 노드를 1로 둠
+
+- 탐색 기준은 번호가 낮은 인접 노드부터 (문제 기준마다 다름!)
+
+- 탐색 순서는 1 / 2, 3, 8 / 7, 4, 5 / 6
+
+  👉 거리가 1, 2, ... 순서대로 차례대로 방문
+
+```python
+# 각 노드가 연결된 정보를 표현 (2차원 리스트)
+graph = [
+    [],
+    [2,3,8],
+    [1,7],
+    [1,4,5],
+    [3,5],
+    [3,4],
+    [7],
+    [2,6,8],
+    [1,7]
+]
+
+# 각 노드가 방문된 정보를 표현
+visited = [False] * 9
+
+from collections import deque
+
+# BFS 메서드 정의
+def bfs(graph, start, visited):
+    # queue 구현 위해 deque 라이브러리 사용
+    # 일단 start = 1 한 개의 요소만 큐에 들어가있는 초기 상태
+    queue = deque([start])
+    # 현재 노드를 방문 처리
+    visited[start] = True
+    # 큐가 빌 때까지 반복
+    while queue:
+        # 큐에서 하나의 원소를 뽑아서 출력
+        v = queue.popleft()
+        print(v, end = ' ')
+        # 아직 방문하지 않은 인접한 원소들을 큐에 삽입
+        for i in graph[v]:
+            if not visited[i]:
+                queue.append(i)
+                visited[i] = True
+            
+# 정의된 DFS 함수 호출
+bfs(graph, 1, visited)
+
+>>> 1 2 3 8 7 4 5 6 
+```
+
+<br>
+
+## 🟨 20강 : DFS & BFS 기초 문제 풀이
+
+### ✅ 문제 풀이
+
+#### ✔️ Q. 음료수 얼려 먹기
+
+- N x M 크기의 얼음 틀
+- 구멍이 있으면 0, 칸막이면 1
+- 구멍이 뚫려 있는 부분끼리 상, 하, 좌, 우로 붙어 있으면 연결된 걸로 간주
+- 연결 요소 몇개인지 구하기
+
+```python
+✅ my solution
+
+N, M = map(int,input().split())
+board = []
+for _ in range(N):
+    x = list(map(int, input()))
+    board.append(x)
+
+dx = [1, 0, -1 ,0]
+dy = [0, 1, 0 ,-1]
+
+# 연결 요소
+count = 0
+
+def dfs(row, col):
+    board[row][col] = 1
+    for d in range(4):
+        nrow = row + dx[d]
+        ncol = col + dy[d]
+        if -1 < nrow < N and -1 < ncol < M:
+            if board[nrow][ncol] == 0:
+                dfs(nrow, ncol)
+for i in range(N):
+    for j in range(M):
+        if board[i][j] == 0:
+            dfs(i, j)
+            count += 1
+print(count)
+```
+
+> - 범위를 확인하고, 아직 0인 상태라면 방문을 함.
+> - dfs 한번 실행할때마다 전체 연결요소를 전부 순회하고, dfs가 실행이 되려면 일단 그 위치가 0이어야함.
+> - 따라서 위치가 0일때만 dfs 한번 실행을 하고, 전부 끝이 나면 count에 +1를 해줌
+
+```python
+✅ good solution 1
+
+# N, M을 공백을 기준으로 구분하여 입력 받기
+n, m = map(int, input().split())
+
+# 2차원 리스트의 맵 정보 입력 받기
+graph = []
+for i in range(n):
+    graph.append(list(map(int, input())))
+
+# DFS로 특정한 노드를 방문한 뒤에 연결된 모든 노드들도 방문
+def dfs(x, y):
+    # 주어진 범위를 벗어나는 경우에는 즉시 종료
+    if x <= -1 or x >= n or y <= -1 or y >= m:
+        return False
+    # 현재 노드를 아직 방문하지 않았다면
+    if graph[x][y] == 0:
+        # 해당 노드 방문 처리
+        graph[x][y] = 1
+        # 상, 하, 좌, 우의 위치들도 모두 재귀적으로 호출
+        dfs(x - 1, y)
+        dfs(x, y - 1)
+        dfs(x + 1, y)
+        dfs(x, y + 1)
+        return True
+    return False
+
+# 모든 노드(위치)에 대하여 음료수 채우기
+result = 0
+for i in range(n):
+    for j in range(m):
+        # 현재 위치에서 DFS 수행
+        if dfs(i, j) == True:
+            result += 1
+
+print(result) # 정답 출력
+```
+
+> - 특정 지점의 주변 상, 하, 좌, 우를 살펴본 후 주변 지점 중에서 값이 0 이면서 아직 방문하지 않은 지점이 있다면 해당 지점을 방문
+> - 방문한 지점에서 다시 상하좌우를 진행하는 과정을 반복하면, 연결된 모든 지점을 방문 가능
+> - 모든 노드에 대해 위 과정을 반복하며, 방문하지 않은 지점의 수를 카운트
+
+```python
+✅ good solution 2
+
+def ice_slush(x, y):
+    # 범위를 벗어나는 경우 종료
+    if x <= -1 or x >= N or y <= -1 or y >= M:
+        return False
+    # 방문하지 않은 노드인 경우
+    if board[x][y] == 0:
+        # 방문 처리
+        board[x][y] = 1
+
+        ice_slush(x - 1, y)
+        ice_slush(x + 1, y)
+        ice_slush(x, y + 1)
+        ice_slush(x, y - 1)
+        return 1
+    return 0
+
+N, M = map(int, input().split())
+board = []
+
+for i in range(N):
+     board.append(list(map(int, input())))
+
+cnt = 0
+for i in range(N):
+    for j in range(M):
+        cnt += ice_slush(i,j)
+
+print(cnt)
+```
+
+> - return을 True/False만 하는 것 보다 종료할때는 False, 시작 정점이 0이었으면 1, 시작이 1이었으면 0을 반환한다고 만든게 더 잘 이해됨
+> - 각 정점 돌때마다 return 값을 더해주면 연결요소가 나옴
+> - 상하좌우 dfs를 구현해놓으면 더이상 진행 못 할때까지 알아서 다 탐색을 하기 때문에(애초에 dfs가 그런 개념이니까) 안에서 어디로 움직이고 다시 되돌아오고 하는지 개념만 숙지해두자
+> - 다만 return을 반환하는 함수 안에서 같은 조건을 만족해서 return을 반환하는 코드를 만나면 return값이 조건에 맞아 반환할 때 마다 여러개 생기는 것이 아닌가? 의문이 생김 👉 [참고](https://syllaverse.com/courses/4/questions/63)
+> - 즉, 재귀적으로 깊이 들어가도 처음 호출한 위치에서 최종적으로 return이 됨.
+
+<br>
+
+#### ✔️ Q. 미로 탈출
+
+- N x M 크기의 미로
+- 시작 위치는 가장 왼쪽 위, 출구는 (N,M)에 위치, 한번에 한칸씩 이동 가능
+- 괴물이 있으면 0, 없으면 1
+- 탈출하기 위한 최소 칸의 개수
+- 시작 칸과 마지막 칸 모두 포함해서 계산
+
+```python
+✅ my solution
+
+N, M = map(int,input().split())
+maze = []
+for _ in range(N):
+    x = list(map(int, input()))
+    maze.append(x)
+
+# 하 우 좌 상 순서
+dx = [1, 0, 0, -1]
+dy = [0, 1, -1, 0]
+
+def bfs(row,col):
+    queue = deque()
+    # 튜플의 형태로 값을 추가
+    queue.append((row,col))    
+    while queue:
+        row, col = queue.popleft()
+        # 큐에서 하나의 원소를 뽑아서 출력
+        for d in range(4):
+            nrow = row + dx[d]
+            ncol = col + dy[d]
+            if -1 < nrow < N and -1 < ncol < M and maze[nrow][ncol] == 1:
+                maze[nrow][ncol] = maze[row][col] + 1
+                queue.append((nrow, ncol))
+    return maze[N - 1][M -1]            
+# 정의된 BFS 함수 호출
+print(bfs(0, 0))
+```
+
+> - BFS는 시작 지점에서 가까운 노드부터 차례대로 그래프의 모든 노드를 탐색
+
+<br>
+
+## 🟨 21강 : 선택 정렬
+
+### ✅ 정렬 알고리즘
+
+#### ✔️ 정렬이란?
+
+- 데이터를 특정한 기준에 따라 순서대로 나열
+- 문제 상황에 따라서 적절한 정렬 알고리즘이 공식처럼 사용
+
+<br>
+
+### ✅ 선택 정렬
+
+#### ✔️ 선택 정렬이란?
+
+- 처리되지 않은 데이터 중 가장 작은 데이터를 선택해서 맨 앞에 있는 데이터와 바꾸는 것을 반복
+
+```python
+for i in range(len(numlist)):
+    min_index = i # 가장 작은 원소의 인덱스
+    # 탐색 범위 내에서 새로운 작은값이 나타나면 인덱스를 바꾸면서 데이터를 서로 바꿈
+    for j in range(i + 1, len(numlist)):
+        if numlist[min_index] > numlist[j]:
+            min_index = j
+    numlist[i], numlist[min_index] = numlist[min_index], numlist[i] # 스와프
+
+print(numlist)
+```
+
+<br>
+
+#### ✔️ 선택 정렬의 시간 복잡도
+
+- N번 만큼 가장 작은 수를 찾아서 맨 앞으로 보내야함
+
+- 전체 연산 횟수는
+
+  ```
+  N + (N -1) + (N -2) + ... + 2 = (N^2 + N -2) / 2
+  ```
+
+- 빅오 표기법에 따라서 `O(N^2)`
+
+<br>
+
+## 🟨 22강 : 삽입 정렬
+
+### ✅ 선택 정렬
+
+#### ✔️ 선택 정렬이란?
+
+- 처리되지 않은 데이터를 하나씩 골라서 적절한 위치에 삽입
+
+```python
+for i in range(len(numlist)):
+    min_index = i # 가장 작은 원소의 인덱스
+    # 탐색 범위 내에서 새로운 작은값이 나타나면 인덱스를 바꾸면서 데이터를 서로 바꿈
+    for j in range(i + 1, len(numlist)):
+        if numlist[min_index] > numlist[j]:
+            min_index = j
+    numlist[i], numlist[min_index] = numlist[min_index], numlist[i] # 스와프
+
+print(numlist)
+```
+
+<br>
+
+#### ✔️ 선택 정렬의 시간 복잡도
+
+- N번 만큼 가장 작은 수를 찾아서 맨 앞으로 보내야함
+
+- 전체 연산 횟수는
+
+  ```
+  N + (N -1) + (N -2) + ... + 2 = (N^2 + N -2) / 2
+  ```
+
+- 빅오 표기법에 따라서 `O(N^2)`
+
+<br>
 
 ## 🟨 30강 : 우선순위 큐
 
