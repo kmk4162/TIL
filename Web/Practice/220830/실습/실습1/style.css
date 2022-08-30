@@ -1,0 +1,33 @@
+/* 아래에 CSS를 작성해주세요. */
+.all-about {
+  font-size: 1rem;
+  text-align: center;
+  font-weight: bold;
+}
+.title {
+  text-align: center;
+  margin-top: 3px;
+  font-size: 28px;
+}
+.cards {
+  width: 300px;
+  margin: 30px 15px 0px;
+  float: left;
+}
+.card-image {
+  width: 300px;
+  border-radius: 1rem;
+}
+.semi-title {
+  margin-top: 6px;
+  font-weight: bold;
+}
+.content {
+  text-align: left;
+  font-size: 10px;
+}
+.small {
+  font-size: 12px;
+  color: gray;
+  margin-bottom: 6px;
+}
