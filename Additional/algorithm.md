@@ -301,7 +301,7 @@ print(result)
 
 #### ✔️ 조합
 
-- 순열 : 서로 다른 n개에서 서로 다른 r개를 선택하여 일렬로 나열하는 것
+- 조합 : 서로 다른 n개에서 서로 다른 r개를 선택만 하는 것
 
 ```python
 from itertools import combinations
@@ -1022,7 +1022,7 @@ dfs(graph, 1, visited)
 >   ```python
 >   # 예를 들어 간선 입력이
 >   # 1 2 / 1 3 / 3 4 / 3 5 이런식으로 주어지면
->             
+>               
 >   # 정점 개수만큼
 >   graph = [[] for _ in range(6)]
 >   # 간선 개수만큼
