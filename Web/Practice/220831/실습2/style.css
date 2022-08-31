@@ -1,0 +1,58 @@
+/* 아래에 CSS를 작성해주세요. */
+.card {
+  width: 300px;
+  text-align: center;
+  margin: auto;
+}
+.card-image {
+  border-radius: 1rem;
+  width: 300px;
+}
+.brand {
+  text-align: left;
+  color: gray;
+  font-size: 12px;
+  margin: 8px;
+}
+.product {
+  text-align: left;
+  font-weight: bold;
+  font-size: 16px;
+  margin: 8px;
+}
+.prices {
+  display: flex;
+  justify-content: flex-start;
+  text-align: left;
+  margin: 4px 8px 4px;
+}
+.discount {
+  text-align: left;
+  color: skyblue;
+  font-weight: 700;
+  font-size: 19px;
+  margin-left: 0px;
+  margin-right: 5px;
+}
+.price {
+  text-align: left;
+  font-weight: 700;
+  font-size: 19px;
+  margin-left: 0px;
+  margin-right: 5px;
+}
+.score {
+  font-size: 15px;
+  font-weight: 700;
+}
+.count {
+  font-size: 15px;
+  font-weight: 700;
+  color: gray;
+}
+.reviews {
+  display: flex;
+  justify-content: flex-start;
+  text-align: left;
+  margin: 2px 8px 8px;
+}

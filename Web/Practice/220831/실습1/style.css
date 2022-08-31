@@ -1,0 +1,33 @@
+/* 아래에 CSS를 작성해주세요. */
+.titles {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.semi-title {
+  font-size: 15px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.main-title {
+  margin: 0px 0px 30px;
+  font-size: 28px;
+}
+.total-cards {
+  display: flex;
+  justify-content: space-evenly;
+}
+.card {
+  width: 300px;
+}
+.image {
+  width: 100%;
+  border-radius: 1rem;
+}
+.installation {
+  color: gray;
+}
+.card-title {
+  font-size: 16px;
+  font-weight: bold;
+}
