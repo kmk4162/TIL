@@ -1,12 +1,9 @@
-# 📕 Database
+# 📕 Web
 
-👉 [Database_1(220816)](./Database_220816.md) : DB란, SQL, 기초 설정, CRUD 명령어...
+👉 [Web_1(220829)](./Web_220829.md) : Web, HTML 기초, CSS 기초
 
-👉 [Database_2(220817)](./Database_220817.md) : WHERE, 집계 함수, LIKE, ORDER BY
+👉 [Web_2(220830)](./Web_220830.md) : CSS 기본 스타일, Selectors, Box model, Display
 
-👉 [Database_3(220818)](./Database_220818.md) : 기본 함수와 연산, GROUP BY, HAVING, SELECT 실행 순서, ALTER TABLE
+👉 [Web_3(220831)](./Web_220831.md) : CSS Position, CSS Layout, Flexbox
 
-👉 [Database_4(220819)](./Database_220819.md) : CASE 문, 서브쿼리 
-
-
-
+👉 [Web_4(220901)](./Web_220901.md) : 시맨틱 태그

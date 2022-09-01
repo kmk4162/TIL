@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
+
+body {
+  font-family: "Noto Sans KR", sans-serif;
+  min-width: 1280px;
+  color: #333333;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  top: 0px;
+  padding: 0.5rem;
+  position: sticky;
+  background-color: aqua;
+}
+
+.nav-link {
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  background-color: rgb(216, 244, 188);
+}
+
+.container {
+  width: 1280px;
+  margin: auto;
+}
+
+.About {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.about-image {
+  width: 500px;
+  margin: 0 1rem;
+  border-radius: 1rem;
+}
+
+.about-texts {
+  width: 500px;
+  margin: 0 1rem;
+}
+
+.about-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.about-content {
+  text-align: left;
+  line-height: 1.8rem;
+}
+
+.banner-image {
+  width: 100%;
+  height: 700px;
+  background-image: url("../assets/apparel.jpeg");
+  background-repeat: no-repeat;
+  background-position: top;
+  margin: auto;
+  margin-bottom: 2rem;
+}
+
+.More {
+  display: flex;
+  flex-direction: column;
+}
+
+.more-title {
+  margin-top: 1rem;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.more-item {
+  text-align: center;
+  padding-bottom: 1rem;
+  margin: 2rem 4rem;
+}
+
+.more-items {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.more-image {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 1rem;
+}
+
+.content {
+  margin: 0 0 1rem;
+}
+
+.uparrow {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+}
+
+.products {
+  display: flex;
+  width: 900px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: auto;
+  margin-top: 5rem;
+}
+.products-item {
+  width: 250px;
+  height: 300px;
+  margin: 0.5rem;
+  border: 1px solid black;
+  padding: 0.5rem;
+}
+
+.card-img {
+  width: 100%;
+}
+
+.products-name {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 1rem 0;
+}
+
+.asdf {
+  padding-left: 10px;
+}
