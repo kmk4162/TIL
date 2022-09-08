@@ -1,0 +1,47 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
+
+.banner {
+  height: 250px;
+}
+
+.banner-title {
+  font-size: 45px;
+}
+
+.cards {
+  margin: 25px;
+}
+
+.footer {
+  padding: 40px;
+}
+
+.card {
+  position: relative;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.card-badge {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+.card-button {
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+.main-title {
+  font-size: 70px;
+  font-weight: bold;
+}
+
+.section-title {
+  padding-top: 60px;
+}
