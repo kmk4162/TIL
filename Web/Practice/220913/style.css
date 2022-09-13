@@ -1,0 +1,19 @@
+/* 네비게이션 바 */
+.nav-logo {
+  width: 6rem;
+}
+
+/* 메인 푸터 */
+.main-footer {
+  width: 100%;
+  background-color: rgb(35, 63, 96);
+}
+
+.community-head {
+  font-size: 75px;
+  margin: 5rem auto;
+}
+
+.container-home {
+  margin-bottom: 5rem;
+}
