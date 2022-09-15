@@ -1,0 +1,128 @@
+/* nav_footer */
+/* 네비게이션 바 */
+.nav-logo {
+  width: 6rem;
+}
+
+/* 메인 푸터 */
+.main-footer {
+  width: 100%;
+  background-color: rgb(35, 63, 96);
+  z-index: 10;
+}
+
+/* home.html */
+/* 영화 목록 카드 */
+.container-home {
+  margin-bottom: 5rem;
+}
+
+.boxoffice {
+  font-size: 55px;
+  margin: 2rem auto;
+}
+
+.boxoffice-card {
+  box-shadow: 0 20px 20px 0 rgba(7, 7, 7, 0.26);
+}
+
+.section-home {
+  margin-bottom: 120px;
+}
+
+.movie-number {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  font-size: 50px;
+  z-index: 5;
+  color: white;
+}
+
+.movie-age {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  width: 4rem;
+  height: 4rem;
+  z-index: 5;
+}
+
+/* community.html */
+.community-head {
+  font-size: 75px;
+  margin: 5rem auto;
+}
+
+.section-community {
+  margin-bottom: 120px;
+}
+
+/* movie.html */
+/* 영화 요약 */
+.exclamation_mark {
+  color: blue;
+}
+
+.ott-btn {
+  width: 130px;
+}
+
+.netflix:hover {
+  background-color: rgb(219, 17, 32) !important;
+}
+
+.watcha:hover {
+  background-color: rgb(247, 5, 85) !important;
+}
+
+.wave:hover {
+  background-color: rgb(0, 80, 255) !important;
+}
+/* 디테일 > 출연진 */
+.movie-detail {
+  margin-bottom: 120px;
+}
+.step_list {
+  list-style-type: none;
+  font-size: 0.8rem;
+}
+
+.step {
+  display: inline-block;
+  width: 7rem;
+  height: 9rem;
+  border-radius: 0.5rem;
+  margin-right: 2rem;
+  margin: 0 auto;
+}
+
+.step1 {
+  background-image: url("https://img1.daumcdn.net/thumb/C408x596/?fname=http%3A%2F%2Ft1.daumcdn.net%2Fcfile%2F15404110ADFC72D333");
+  background-size: cover;
+}
+
+.step2 {
+  background-image: url("https://img1.daumcdn.net/thumb/C408x596/?fname=http%3A%2F%2Ft1.daumcdn.net%2Fcfile%2F140D7C10ADF8435D0C");
+  background-size: cover;
+}
+
+.step3 {
+  background-image: url("https://img1.daumcdn.net/thumb/C408x596/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fmovie%2Ffae5ef8b0d92cead2954dad9521386e2db445312");
+  background-size: cover;
+}
+
+.step4 {
+  background-image: url("https://img1.daumcdn.net/thumb/C408x596/?fname=http%3A%2F%2Ft1.daumcdn.net%2Fcfile%2F156B8D10B16CC9264C");
+  background-size: cover;
+}
+
+.step5 {
+  background-image: url("https://img1.daumcdn.net/thumb/C408x596/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fmovie%2Fdong-test%2F8e7d65915ad1bfdd12d68c975a7a14ab7cb6b45c");
+  background-size: cover;
+}
+/* 영화 */
+.movie-btn {
+  width: 70vw;
+  height: 50vw;
+}
