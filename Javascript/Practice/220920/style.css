@@ -1,0 +1,43 @@
+.ball {
+  height: 10rem;
+  width: 10rem;
+  font-size: 5rem;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  background-color: aqua;
+  line-height: 10rem;
+  border-radius: 50%;
+  margin: 1rem;
+}
+
+.ball-container {
+  display: flex;
+  justify-content: center;
+  border-radius: 3rem;
+  width: 100%;
+  margin-top: 3rem;
+}
+
+.title {
+  font-size: 100px;
+  padding-top: 3rem;
+}
+
+.container {
+  text-align: center;
+  margin: 0 15rem;
+  background-color: rgb(238, 194, 194);
+}
+
+#lotto-btn {
+  width: 25rem;
+  height: 9rem;
+  font-size: 3rem;
+  border-radius: 2rem;
+  background-color: rgb(102, 190, 122);
+  border-color: rgb(102, 190, 122);
+  color: white;
+  font-weight: 700;
+  margin-bottom: 3rem;
+}
