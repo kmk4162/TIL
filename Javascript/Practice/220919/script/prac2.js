@@ -1,10 +1,3 @@
-// 1. input에 작성된 내용을 그대로 출력하기
-// const inputText = document.querySelector("#text-input");
-// inputText.addEventListener("input", function (event) {
-//   const copyText = document.querySelector("#text-paragraph");
-//   copyText.innerText = event.target.value;
-// });
-
 // 2. 모달 직접 만들어보기
 // 모달 버튼이 클릭되면
 const modalToggle = function () {
