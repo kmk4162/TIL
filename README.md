@@ -16,7 +16,9 @@
 
 🧩 [Web(220825~220907)](./Web/README.md)
 
-🧩 [Javascript(220915~)](./Javascript/README.md)
+🧩 [Javascript(220915~220920)](./Javascript/README.md)
+
+🧩 [Django(220921~)](./Django/README.md)
 
 🧩 [특강](./%ED%8A%B9%EA%B0%95/README.md)
 
