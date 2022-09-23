@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>로또 번호 추첨</title>
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container text-center">
+      <h1 class="fw-bold my-3">5000원어치 드릴게요!</h1>
+      <div>
+        <div>
+          {% for lotto in lotto_paper %}
+          <div class="text-white my-2 bg-primary py-2 fw-bold">
+            {% for l in lotto.0 %}
+            <span> {{ l }} </span>
+            {% endfor %}
+          </div>
+          {% if lotto.1 == 0 %}
+          <div class="fw-bold">꽝! 다음기회에...</div>
+          {% else %}
+          <div class="fw-bold">{{ lotto.1 }}등!</div>
+          {% endif %} {% endfor %}
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
