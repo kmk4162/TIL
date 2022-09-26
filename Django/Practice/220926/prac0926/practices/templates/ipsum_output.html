@@ -1,0 +1,10 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container">
+  <h1 class="fw-bold text-center my-3">이모지 생성기</h1>
+  {% for i in range %} {% for j in ipsum_list %}
+  <span class="text-center">{{ j }}</span>
+  {% endfor %}
+  <hr />
+  {% endfor %}
+</div>
+{% endblock %}

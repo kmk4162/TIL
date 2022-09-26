@@ -1,0 +1,16 @@
+{% extends 'base.html' %} {% block content %}
+<div class="contatiner m-5">
+  <h1 class="fw-bold text-center mb-3">이모지 ipsum 생성기!!</h1>
+  <form action="/ipsum-output" method="GET">
+    <div class="mb-3">
+      <label for="text" class="form-label">몇 묶음 드릴까요?</label>
+      <input type="text" class="form-control" name="paragraph_number" />
+    </div>
+    <div class="mb-3">
+      <label for="text" class="form-label">한 묶음에 몇개 넣어드려요?</label>
+      <input type="text" class="form-control" name="word_number" />
+    </div>
+    <button type="submit" class="btn btn-primary">눌러봐!</button>
+  </form>
+</div>
+{% endblock %}

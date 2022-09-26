@@ -1,0 +1,11 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container my-5 text-center">
+  <h1 class="fw-bold">계산 결과</h1>
+  <div class="bg-primary opacity-70 rounded-3">
+    <h1>{{ number1 }} + {{ number2 }} = {{ plusnumbers }}</h1>
+    <h1>{{ number1 }} - {{ number2 }} = {{ minusnumbers }}</h1>
+    <h1>{{ number1 }} * {{ number2 }} = {{ multiplynumbers }}</h1>
+    <h1>{{ number1 }} // {{ number2 }} = {{ dividenumbers }}</h1>
+  </div>
+</div>
+{% endblock %}

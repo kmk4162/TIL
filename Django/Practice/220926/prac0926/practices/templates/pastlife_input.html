@@ -1,0 +1,19 @@
+{% extends 'base.html' %} {% block content %}
+<!-- <form action="/pastlife-output" method="GET" class="text-center my-4">
+  이름을 입력해주세요.
+  <br />
+  <input type="text" name="kevin" />
+  <br />
+  <input type="submit" />
+</form> -->
+<div class="contatiner m-5">
+  <form action="/pastlife-output" method="GET">
+    <div class="mb-3">
+      <label for="text" class="form-label">이름을 입력하세요</label>
+      <input type="text" class="form-control" name="name" />
+    </div>
+    <button type="submit" class="btn btn-primary">전생 확인하기</button>
+  </form>
+</div>
+
+{% endblock %}
