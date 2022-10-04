@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- index.html -->
+    <h1>welcome to my page!</h1>
+    <h1>게시판</h1>
+    <a href="{% url 'articles:create' %}">새 글 작성</a>
+    <h3>Review List</h3>
+    {% for article in articles %}
+    <p>제목: {{ article.title }} 내용: {{ article.content }}</p>
+    <p>
+      작성일자: {{ article.created_at.month }}월 {{ article.created_at.day }}일
+      수정일자: {{ article.updated_at.month }}월 {{ article.updated_at.day }}일
+    </p>
+    <a href="{% url 'articles:detail' article.pk %}">상세 보기</a>
+    <a href="{% url 'articles:delete' article.pk %}">삭제하기</a>
+    <hr />
+    {% endfor %}
+  </body>
+</html>
