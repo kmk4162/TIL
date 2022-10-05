@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load django_bootstrap5 %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}" />
+{% endblock %}
+
+{% block body %}
+<div class="detail-container">
+  <h1 class="detail-title">List</h1>
+  <hr style="color:white">
+  <h2>{{ article.title }}</h2>
+  <h3>{{ article.content }}</h3>
+
+  <div class="buttons mt-3">
+    <!-- 삭제 버튼 -->
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+      Delete
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">Warning</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            Do you really want to delete it?
+          </div>
+          <div class="modal-footer">
+            <a href="{% url 'articles:delete' article.pk %}">
+              <button type="button" class="btn btn-primary">Yes</button>
+            </a>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="{% url 'articles:update' article.pk %}">
+      <button type="button" class="btn btn-primary" >Update</button>
+    </a>
+    <a href="{% url 'articles:index' %}">
+      <button type="button" class="btn btn-info">Go to Home</button>
+    </a>
+  </div>
+  <p class="text-end">
+  number: {{ article.pk }}
+  <br>
+  create: {{ article.created_at.month }}/ {{ article.created_at.day }} |
+  edit: {{ article.updated_at.month }}/ {{ article.updated_at.day }}
+  </p>
+</div>
+{% endblock %}

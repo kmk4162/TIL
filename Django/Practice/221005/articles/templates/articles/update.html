@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load django_bootstrap5 %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}" />
+{% endblock %}
+
+{% block body %}
+<div class="update-container">
+  <h1>Update Article</h1>
+  <form action="" method="POST">
+    {% csrf_token %}
+    <div class="create-form">{% bootstrap_form article_form %}</div>
+    
+    {% bootstrap_button button_type="submit" content="Done!" %}
+  </form>
+</div>
+{% endblock %}

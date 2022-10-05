@@ -1,0 +1,52 @@
+h1 {
+  font-weight: bolder;
+  color: rgb(253, 131, 131);
+  font-size: 50px;
+}
+
+h2 {
+  color:rgb(99, 160, 230);
+}
+
+h3 {
+  color: whitesmoke;
+}
+
+p {
+  color: whitesmoke;
+}
+
+.index-container {
+  padding: 2rem;
+  margin: 2rem;
+}
+
+.index-title {
+  color: rgb(253, 131, 131);
+}
+
+.create-container {
+  border-radius: 1rem;
+  padding: 2rem;
+  margin: 2rem;
+}
+
+.create-form {
+  color:rgb(99, 160, 230);
+}
+
+.detail-container {
+  border-radius: 1rem;
+  padding: 2rem;
+  margin: 2rem;
+}
+
+.detail-title {
+  color: rgb(253, 131, 131);
+}
+
+.update-container {
+  border-radius: 1rem;
+  padding: 2rem;
+  margin: 2rem;
+}

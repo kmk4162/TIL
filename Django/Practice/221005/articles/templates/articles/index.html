@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load django_bootstrap5 %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}" />
+{% endblock %}
+
+{% block body %}
+<div class="index-container">
+  <h1 class="index-title">List</h1>
+  <hr style="color:white">
+  {% for article in articles %}
+    <h2>{{ article.title }}</h2>
+    <div>
+      <a href="{% url 'articles:detail' article.pk %}">
+       <button type="button" class="btn btn-light mt-3">Watch Detail</button>
+      </a>
+    </div>
+    <hr style="color:white">
+  {% endfor %}
+  <a href="{% url 'articles:create' %}">
+    <button type="button" class="btn btn-success" >New Article?</button>
+  </a>
+</div>
+{% endblock %}
