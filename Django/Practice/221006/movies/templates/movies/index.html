@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load django_bootstrap5 %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}" />
+{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <h1>Movie List</h1>
+    {% comment %} 영화 리스트들 표 형태 {% endcomment %}
+      <table class="table align-middle">
+        <thead>
+          <tr>
+            <th scope="col">pk</th>
+            <th scope="col">Title</th>
+            <th scope="col">See Detail</th>
+          </tr>
+        </thead>
+        <tbody class="table-group-divider">
+          {% for movie in movies %}
+            <tr>
+              <td>{{ movie.pk }}</td>
+              <td>{{ movie.title }}</td>
+              <td><a href="{% url 'movies:detail' movie.pk %}">
+                <button type="button" class="btn btn-info" style="background-color: aquamarine">detail</button>
+              </a></td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    <a href="{% url 'movies:create' %}">
+      <button type="button" class="btn btn-primary">New Movie</button>
+    </a>
+  </div>
+{% endblock %}

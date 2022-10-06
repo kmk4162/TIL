@@ -1,0 +1,16 @@
+h1 {
+  font-weight: bolder;
+  color: rgb(253, 131, 131);
+  font-size: 50px;
+}
+
+h2 {
+  font-weight: bold;
+  color: rgb(131, 208, 253);
+  font-size: 40px;
+}
+
+.container {
+  margin-top: 3rem;
+}
+

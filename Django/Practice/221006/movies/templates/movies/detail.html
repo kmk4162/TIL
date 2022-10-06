@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load django_bootstrap5 %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}" />
+{% endblock %}
+
+{% block content %}
+<div class="container"> 
+  <h1>About Movie</h1>
+  <hr>
+  <h2>{{ movie.title }}</h2>
+  <h3>{{ movie.summary }}</h3>
+  <h4>running time: {{ movie.running_time }}</h4>
+
+  <div class="buttons d-flex justify-content-end">
+    {% comment %} 삭제 버튼 with 모달 {% endcomment %}
+    <!-- Button trigger modal -->
+    <div class="delete-btn me-3">
+      <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Wanna Delete?
+      </button>
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Warning</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              Do you really want to delete it?
+            </div>
+            <div class="modal-footer">
+              <a href="{% url 'movies:delete' movie.pk %}">
+                <button type="button" class="btn btn-primary">Yes</button>
+              </a>  
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <a href="{% url 'movies:update' movie.pk %}">
+      <button type="button" class="btn btn-primary">Wanna Update?</button>
+    </a>  
+  </div>
+  <div class="text-end mt-3">
+    <a href="{% url 'movies:index' %}">
+      <button type="button" class="btn btn-info">Go to Home</button>
+    </a>
+  </div>
+
+
+</div>
+{% endblock %}
