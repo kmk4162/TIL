@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% load django_bootstrap5 %}
+
+{% block body %}
+  <h1>See detail</h1>
+  <p><span class="fw-bold">ID</span>: {{ user.pk }}</p>
+  <p><span class="fw-bold">name</span>: {{ user.username }}</p>
+  <p><span class="fw-bold">email</span>: {{ user.email}}</p>
+{% endblock body %}
