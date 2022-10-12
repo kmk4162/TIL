@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+
+{% comment %} 회원별 정보 페이지{% endcomment %}
+{% block body %}
+<h1 class="mb-3"><span>{{ user.username }}</span>님 회원 정보</h1>
+<p><span class="fw-bold">ID</span>: {{ user.pk }}</p>
+<p><span class="fw-bold">name</span>: {{ user.username }}</p>
+<p><span class="fw-bold">email</span>: {{ user.email}}</p>
+{% endblock body %}
