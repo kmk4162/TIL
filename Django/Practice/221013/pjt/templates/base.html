@@ -1,0 +1,36 @@
+{% load django_bootstrap5 %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  {% bootstrap_css %}
+  {% block css %}{% endblock css %}
+</head>
+<body style="background-color:rgb(140, 150, 200)">
+  <div class="container my-5">
+    {% comment %} 조건문 분기 처리를 통해 버튼들을 전부 나오거나 일부만 나오게 처리 {% endcomment %}
+    {% if request.user.is_authenticated %}
+    <h2>안녕하세요 <a href="{% url 'accounts:detail' user.pk %}">{{ user }}</a> 님!</h2>
+    <a href="{% url 'accounts:logout' %}">
+      <button type="button" class="btn btn-light">로그아웃</button>
+    </a>
+    <a href="{% url 'accounts:update' %}">
+      <button type="button" class="btn btn-primary">업데이트</button>
+    </a>
+    {% else %}
+    <a href="{% url 'accounts:signup' %}">
+      <button type="button" class="btn btn-light">회원가입</button>
+    </a>
+    <a href="{% url 'accounts:login' %}">
+      <button type="button" class="btn btn-light">로그인</button>
+    </a>
+    {% endif %}
+    {% block body %}{% endblock body %}
+  </div>
+  {% bootstrap_javascript %}
+</body>
+
+</html>

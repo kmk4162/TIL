@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+
+{% block body %}
+<h1>회원 리스트</h1>
+{% for user in users %}
+  {{ user.pk }}
+  {{ user.username }}
+  <a href="{% url 'accounts:detail' user.pk %}">상세정보 페이지</a>
+  <hr>
+{% endfor %}
+{% endblock body %}
