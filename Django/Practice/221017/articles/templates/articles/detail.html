@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load django_bootstrap5 %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock %}
+
+{% block body %} 
+<h1>정보</h1>
+<div>
+  <a href="{% url 'articles:index' %}">
+    <button type="button" class="btn btn-primary">홈으로</button>
+  </a>
+  <a href="{% url 'articles:delete' article.pk %}">
+    <button type="button" class="btn btn-danger">삭제하기</button>
+  </a>
+  <a href="{% url 'articles:update' article.pk %}">
+    <button type="button" class="btn btn-primary">수정하기</button>
+  </a>
+</div>
+  <h2>{{ article.title }}</h2>
+  <h3>{{ article.content }}</h3>
+  {% if article.image %}
+    <img src="{{ article.image.url }}" alt="{{ article.image }}" width="400" height="300">
+  {% endif %}
+{% endblock body %}
