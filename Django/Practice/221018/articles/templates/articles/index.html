@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load django_bootstrap5 %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock %}
+
+{% block body %}
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <h1>게시판</h1>
+  <a href="{% url 'articles:create' %}">
+    <button type="button" class="btn btn-primary">작성하기</button>
+  </a>
+</div>
+
+<div class="row">
+  {% for user in users %}
+    <div class="col-4">
+      <div class="card">
+        {% if user.thumbnail %}
+          <img src="{{ user.thumbnail.url }}" class="card-img-top" alt="...">
+        {% endif %}
+          <div class="card-body">
+          <h5 class="card-title">{{ user.title }}</h5>
+          <a href="{% url 'articles:detail' user.pk %}" class="btn btn-outline-primary my-3">상세정보 페이지</a>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+{% endblock body %}
