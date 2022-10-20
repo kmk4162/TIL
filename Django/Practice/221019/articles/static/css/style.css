@@ -1,0 +1,28 @@
+.logo-img {
+  height: 30px;
+  width: 40px;
+}
+
+* {
+  font-family: 'Nanum Gothic', sans-serif;
+}
+
+h1 {
+  color: rgb(255, 172, 19);
+  font-weight: bold;
+}
+
+.create-btn {
+  position: relative;
+  border: none;
+  display: inline-block;
+  padding: 10px 10px;
+  border-radius: 15px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.25s;
+  background-color: #ff5f2e;
+  color: #e1eef6;
+  font-size: 15px;
+}
+

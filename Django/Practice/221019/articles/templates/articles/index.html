@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load django_bootstrap5 %}
+
+{% block css %}
+{% endblock css %}
+
+{% block body %}
+<div class='d-flex justify-content-end me-5'>
+  <a href="{% url 'articles:create' %}">
+  <button type="submit" class="create-btn">새글 작성</button></a>
+</div>
+
+<h1>게시판</h1>
+<hr>
+{% for article in articles %}
+  <p>작성자: {{ article.user }}</p>
+  <p>제목: <a href="{% url 'articles:detail' article.pk %}">{{ article.title }}</a></p>
+  <hr>
+{% endfor %}
+{% endblock body %}
