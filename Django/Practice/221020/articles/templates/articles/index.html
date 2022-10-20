@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load django_bootstrap5 %}
+
+{% block css %}
+{% endblock css %}
+
+{% block body %}
+<div class='d-flex justify-content-end me-5'>
+  <a href="{% url 'articles:create' %}">
+  <button type="submit" class="create-btn">새 망나뇽</button></a>
+</div>
+
+<h1>망나뇽들</h1>
+<div class="row">
+  {% for article in articles %}
+  <div class='col-4 mt-3'>
+    <div class="card">
+      {% if article.image %}
+        <img src="{{ article.image.url }}" class="card-img-top" alt="...">
+      {% endif %}
+        <div class="card-body">
+        <h5 class="card-title">{{ article.title }}</h5>
+        <a href="{% url 'articles:detail' article.pk %}"><button type="submit" class="create-btn">관찰하기</button></a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock body %}

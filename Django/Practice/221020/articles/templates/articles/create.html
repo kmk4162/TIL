@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load django_bootstrap5 %}
+
+{% block css %}
+{% endblock css %}
+
+{% block body %}
+<h1>Create Your 망나뇽</h1>
+<form action="{% url 'articles:create' %}" method="POST" enctype="multipart/form-data">
+  {% csrf_token %}
+  {% bootstrap_form article_form %}
+  {% bootstrap_button button_type="submit" content="OK" %}
+</form>
+{% endblock body %}

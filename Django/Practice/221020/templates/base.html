@@ -1,0 +1,57 @@
+{% load static %}
+{% load django_bootstrap5 %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  {% bootstrap_css %}
+  {% comment %} 기본 css {% endcomment %}
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  {% comment %} 폰트 css {% endcomment %}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+</head>
+
+<body style="background-color:rgb(233, 249, 254)">
+  <nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid d-flex justify-content-between">
+      <div>
+        <a style = "color: orange;" class="navbar-brand fw-bolder" href="{% url 'articles:index' %}">나뇽스 |</a>
+        <span class="base-username">Hello, {{ user.username }}!</span>
+      </div>  
+      <div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{% url 'articles:index' %}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'accounts:login' %}">Login</a></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Pricing</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled">Disabled</a>
+            </li>
+          </ul>
+        </div>
+     </div>
+    </div>
+  </nav>
+
+  <div class="container my-5">
+    {% block body %}
+    {% endblock body %}
+  </div>
+</body>
+{% bootstrap_javascript %}
+
+</html>

@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load django_bootstrap5 %}
+
+{% block css %}
+{% endblock css %}
+
+{% block body %}
+<div class='d-flex justify-content-between'>
+  <h1>{{ article.pk }}.</h1>
+  <div class="buttons">
+    <a href="{% url 'articles:update' article.pk %}"><button type="submit" class="create-btn">Wanna Update</button></a>
+    <button type="submit" class="delete-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      Delete!
+    </button>
+   
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5 text-danger" id="exampleModalLabel">Warning!</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>Are U Sure?</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+            <a href="{% url 'articles:delete' article.pk %}">
+              <button type="button" class="btn btn-primary">Yes!</button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="card">
+  {% if article.image %}
+    <img src="{{ article.image.url }}" class="card-img-top" alt="...">
+  {% endif %}
+    <div class="card-body">
+    <h5 class="card-title">{{ article.title }}</h5>
+    <h5 class="card-title">{{ article.content }}</h5>
+    </div>
+  </div>
+</div>
+<h1>Comments</h1>
+{% for comment in comments %}
+
+{% endfor %}
+{% endblock body %}

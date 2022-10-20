@@ -1,0 +1,47 @@
+.logo-img {
+  height: 40px;
+  width: 50px;
+}
+
+* {
+  font-family: 'Nanum Gothic', sans-serif;
+}
+
+h1 {
+  color: rgb(255, 172, 19);
+  font-weight: bold;
+}
+
+.create-btn {
+  position: relative;
+  border: none;
+  display: inline-block;
+  padding: 10px 10px;
+  border-radius: 15px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.25s;
+  background-color: orange;
+  color: #e1eef6;
+  font-size: 15px;
+}
+
+.delete-btn {
+  position: relative;
+  border: none;
+  display: inline-block;
+  padding: 10px 10px;
+  border-radius: 15px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.25s;
+  background-color: rgb(248, 113, 113);
+  color: #e1eef6;
+  font-size: 15px;
+}
+
+.base-username {
+  color: rgb(236, 166, 27);
+  font-weight: bold;
+  font-size: 20px;
+}
