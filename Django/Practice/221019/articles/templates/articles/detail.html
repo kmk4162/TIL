@@ -8,7 +8,7 @@
 
 {% block body %}
 <h1>게시판</h1>
-<p>작성자: {{ article.user }}</p>
+<p>작성자: <a href="{% url 'accounts:detail' article.user.pk %}">{{ article.user }}</a></p>
 <p>제목: {{ article.title }}</p>
 <p>내용: {{ article.content }}</p>
 {% endblock body %}

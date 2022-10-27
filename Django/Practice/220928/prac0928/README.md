@@ -76,7 +76,7 @@ models.py에서 받으려는 데이터에 맞는 조건과 field를 생성
 
 할 일 추가를 위해 내용, 우선 순위, 마감 기한의 데이터를 사용자로부터 입력을 받아야함
 
-HTML의 form 태그를 활용해서 input을 받음
+**HTML의 form 태그를 활용해서 input을 받음**
 
 이 때 form 태그의 action을 `todos:create`로 지정하고 밑의 3개의 값들이 name을 이용해서 views.py쪽과 맞춘다. 이렇게 되면 name을 참조해서 HTML 쪽에서 입력되는 input 데이터 들을 get 메소드를 이용해서 가져와서 조작이 가능!
 

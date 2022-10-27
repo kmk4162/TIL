@@ -4,13 +4,20 @@
 
 User 모델은 Django **AbstractUser** 모델 상속
 
-Article 모델은 밑의 조건을 보고 생성
+Article, Comment 모델 기준은 아래와 같음
 
 | 필드 이름 | 역할      | 필드       | 속성                     |
 | --------- | --------- | ---------- | ------------------------ |
 | user      | 글 작성자 | ForeignKey | on_delete=models.CASCADE |
 | title     | 글 제목   | Char       | max_length=80            |
 | content   | 글 내용   | Text       |                          |
+| image     | 글 이미지 | Image      | upload_to=”articles/”    |
+
+| 필드 이름 | 역할        | 필드       | 속성                     |
+| --------- | ----------- | ---------- | ------------------------ |
+| user      | 댓글 작성자 | ForeignKey | on_delete=models.CASCADE |
+| article   | 게시글      | ForeignKey | on_delete=models.CASCADE |
+| content   | 댓글 내용   | Char       | max_length=80            |
 
 ```python
 # articles/models.py
@@ -22,6 +29,11 @@ class Article(models.Model):
     title = models.Charfield(max_length=80)
     content = models.TextField()
 ```
+
+```python
+```
+
+
 
 ```python
 # accounts/models.py
@@ -202,8 +214,6 @@ urlpatterns = [
 ]
 ```
 
-![image-20221019101036839](README.assets/image-20221019101036839.png)
-
 <br>
 
 ## 4. 댓글 삭제(Delete)
@@ -262,8 +272,6 @@ def comments_delete(request, article_pk, comment_pk):
     </div>
 ```
 
-![image-20221019103059757](README.assets/image-20221019103059757.png)
-
 <br>
 
 ## 5. 댓글 개수 출력하기
@@ -277,8 +285,6 @@ def comments_delete(request, article_pk, comment_pk):
 ```
 
 > DTL filter를 사용해서 댓글 개수 출력
-
-![image-20221019103453564](README.assets/image-20221019103453564.png)
 
 <br>
 

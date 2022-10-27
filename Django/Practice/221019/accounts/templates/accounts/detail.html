@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load django_bootstrap5 %}
+
+{% block css %}
+{% endblock %}
+
+{% block body %}
+<h1>회원 정보</h1>
+{{ user.username }}
+<p>총 {{ user.article_set.count }}개 작성하셨습니다.</p>
+{% for article in user.article_set.all %}
+ {{ article.title }}
+ {{ article.content }}
+ <hr>
+{% endfor %}
+{% endblock body %}
