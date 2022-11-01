@@ -36,3 +36,5 @@
 
 👉 [Django 15(221024)](./Django_221024.md) : ManyToManyField, related_name argument, through argument, 좋아요 기능
 
+👉 [Django 16(221025)](./Django_221025.md) : 
+
