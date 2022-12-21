@@ -16,6 +16,9 @@ def bfs(x, y):
         for d in range(8):
             new_x = x + dx[d]
             new_y = y + dy[d]
+            if new_x == target_x and new_y == target_y:
+                graph[new_x][new_y] = graph[x][y] + 1
+                return True
             if -1 < new_x < N and -1 < new_y < N:
                 if not graph[new_x][new_y]:
                     graph[new_x][new_y] = graph[x][y] + 1
